@@ -1,0 +1,631 @@
+<flash-messages></flash-messages>
+<ul>
+    <li *ngFor="let user of user">
+      {{user.username}}
+    </li>
+</ul>
+
+<div class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-lg-12">
+          <div class="navbar">
+              
+                  <img src="assets/images/1.png" id="img1" />
+              
+              <div class="first">
+                  <div class="firstone">
+                        <ul id="up">
+                                <li>A<sup>-</sup></li>
+                                <li>A</li>
+                                <li>A<sup>+</sup></li>
+                                <li>CONTACT US</li>
+                                <li class="red-text">AGENT LOGIN</li>
+                                <li><span class="special">ALERTS</span></li>
+                                <li>HINDI</li>
+                        </ul>
+                  </div>
+                  <div class="second">  
+                    <ul> 
+                        <li>
+                          <i class="fas fa-home"></i>
+                        </li>
+                        <li>
+                            <a>TRAINS
+                              <ul>
+                                 <li>first</li>
+                                 <li>second</li>
+                             </ul>
+                            </a>
+                          </li>
+                          <li><a>HOLIDAYS
+                            <ul>
+                              <li>third</li>
+                               <li>fourth</li>
+                           </ul>
+                           </a>
+                        </li>
+                        <li><a>FLIGHTS
+                           <ul>
+                               <li>fifth</li>
+                               <li>sixth</li>
+                          </ul>
+                          </a>
+                        </li>  
+                        <li><a>LOYALTY
+                          <ul>
+                               <li>seventh</li>
+                               <li>eight</li>
+                          </ul>
+                          </a>
+                        </li>
+                        <li><a>MEALS
+                          <ul>
+                               <li>seventh</li>
+                               <li>eight</li>
+                          </ul>
+                          </a>
+                        </li>
+                        <li><a>PROMOTIONS
+                          <ul>
+                               <li>seventh</li>
+                               <li>eight</li>
+                          </ul>
+                          </a>
+                        </li>   
+                       <li><a>SERVICE AT STATIONS
+                          <ul>
+                              <li>seventh</li>
+                              <li>eight</li>
+                         </ul>
+                         </a>
+                       </li>
+                       <li><a>IRCTC eWallet
+                          <ul>
+                              <li>seventh</li>
+                              <li>eight</li>
+                            </ul>  
+                          </a>
+                       </li>
+                       <li><a>MORE</a>
+                          <ul>
+                             <li><a href="#">seventh</a></li>
+                             <li><a href="#">eight</a></li>
+                          </ul>
+                        
+                       </li>
+                        </ul>
+                  </div>
+              </div>
+              <div class="nav-right hidden-md, hidden-sm, hidden-xs">
+                  <img src="assets/images/logo.png" id="img2" />
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<form (submit)="onRegisterSubmit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="name" name="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" [(ngModel)]="username" name="username" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" [(ngModel)]="email" name="email" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" [(ngModel)]="password" name="password" class="form-control">
+  </div>
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form>-->
+
+<div class="middle">
+    <div class="container">
+        <form name="form" (submit)="onRegisterSubmit()">
+          <input type="hidden" name="_id"  [(ngModel)]="_id">
+          <div class="row">
+              <div class="col-sm-12 col-lg-12 top">
+                  Individual Registration
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-lg-12 col-sm-12">
+                  <label>GARBAGE/JUNK VALUES IN PROFILE MAY LEAD TO DEACTIVATION</label><br>
+                  Please use a valid E-Mail ID and mobile number in registration.
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="input-field col-lg-3 col-sm-12">
+                <label>Username</label>  
+                <label class="red-text">*</label>
+              </div>  
+              <div class="form-group col-lg-3 col-sm-12" >
+                <input type="text" name="username" [(ngModel)]="username" class="form-control" id="username" placeholder="User Name" #usernameControl="ngModel" required>
+                <span class="text-danger"></span>
+              </div>
+              <div class="input-field col-lg-3 col-sm-12">   
+                <label>Password</label>
+                <label class="red-text">*</label>
+              </div>
+              <div class="input-field col-lg-3 col-sm-12">
+                <input type="password" name="password" [(ngModel)]="password" class="form-control" id="password" placeholder="Password" >
+                <span id="pid" class="text-danger"></span>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="input-field col-lg-3 col-sm-12">
+                <label>Confirm Password</label>  
+                <label class="red-text">*</label>
+              </div>  
+              <div class="input-field col-lg-3 col-sm-12">
+                  <input type="password" name="cpassword" class="form-control" id="cpassword" [(ngModel)]="cpassword" placeholder="Confirm Password" >
+                  <span id="cid" class="text-danger"></span>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="input-field col-lg-3 col-sm-12">
+                <label>Security Question</label>  
+                <label class="red-text">*</label>
+              </div>  
+              <div class="input-field col-lg-3 col-sm-12">
+                  <select id="security" class="form-control" name ="security" [(ngModel)]="security">
+                      <option value="none" id="security">Select your option</option>
+                      <option value="Petname" id="security" >What is your pet name?</option>
+                      <option value="Firstschool" id="security">What was the name of your first school?</option>
+                      <option value="Childhoodhero" id="security">Who was your Childhood hero?</option>
+                      <option value="Pasttime" id="security">What is your all time favorite past-time?</option>
+                      <option value="Sportsteam" id="security">What is your all time favorite sports team?</option>
+                      <option value="Middlename" id="security">What is your fathers middle name?</option>
+                      <option value="Firstcar" id="security">What make was your first car or bike?</option>
+                      <option value="Spouse" id="security">Where did you first meet your spouse</option>
+                  </select>
+                  <span id="sid" class="text-danger"></span>
+              </div>
+              <div class="input-field col-lg-3 col-sm-12">   
+                <label>Security Answer</label>
+                <label class="red-text">*</label>
+                
+              </div>
+              <div class="input-field col-lg-3 col-sm-12">
+                  <input type="text" name="anssecurity" class="form-control" id="anssecurity" [(ngModel)]="anssecurity">
+                  <span id="asid" class="text-danger"></span>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="input-field col-lg-3 col-sm-12">
+                <label>Preferred Language </label>  
+                <label class="red-text">*</label>
+              </div>  
+              <div class="input-field col-lg-3 col-sm-12">
+                  <select id="pselect" class="form-control" name="pselect" [(ngModel)]="pselect">
+                      <option value="none" >Select language</option>
+                      <option value="English">English</option>
+                      <option value="Hindi">Hindi</option>
+                  </select>
+                  <span id="ppid" class="text-danger" ></span>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-12 col-sm-12 personal">
+              Personal Details
+            </div>
+          </div>  
+          <div class="row">
+            <div class="input-field col-lg-3 col-sm-12">
+              <label>Name</label>  
+              <label class="red-text">*</label>
+            </div>  
+            <div class="input-field col-lg-3 col-sm-12">
+                <input type="text" class="form-control" id="firstname" name="name"  [(ngModel)]="name" placeholder="First Name">
+                <span id="fid" class="text-danger"></span>
+            </div>
+            <div class="input-field col-lg-3 col-sm-12">   
+               <input type="text" class="form-control" id="middlename" name="middlename"  [(ngModel)]="middlename" placeholder="Middle Name">
+            </div>
+            <div class="input-field col-lg-3 col-sm-12">
+               <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="lastname" placeholder="Last Name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 ">
+            </div>
+            <div class="col-lg-9 col-sm-12 info">
+                <b>Info!</b>Please provide your exact name as per Aadhaar to avail Aadhaar based benefits on IRCTC eTicketing website.
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-3 col-sm-12">
+              <label>Gender</label>
+              <span class="circle"><i class="far fa-check-circle"></i></span>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+              <label class="col-md-3 col-sm-4 col-xs-3" style="width:25%"><input type="radio"  name="gender" value="male" > Male</label>
+              <label class="col-md-3 col-sm-4 col-xs-4" style="width:25%"><input type="radio"  name="gender" value="female"> Female</label>
+              <label class="col-md-3 col-sm-4 col-xs-5" style="width:25%"><input type="radio"  name="gender" value="other"> Transgender</label>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-3 col-sm-12">
+                <label>Date of Birth</label>
+                <label class="red-text">*</label>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <input type="text" class="form-control" id="birthdate"  name="dob" [(ngModel)]="dob"/>
+                <span id="dobid" class="text-danger"></span>
+            </div>
+            <div class="col-lg-2 col-sm-12">
+                <label>Occupation</label>
+                <label class="red-text">*</label>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <select class="form-control" id="oselect" name="oselect" [(ngModel)]="oselect" style="width:270px" >
+                    <option value="none" >Select your Occupation</option>
+                    <option value="government">GOVERMENT</option>
+                    <option value="public">PUBLIC</option>
+                    <option value="private">PRIVATE</option>
+                    <option value="professional">PROFESSIONAL</option>
+                    <option value="selfemployed">SELF EMPLOYED</option>
+                    <option value="student">STUDENT</option>
+                    <option value="other">OTHER</option>
+                </select>
+                <span id="osid" class="text-danger"></span>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-3 col-sm-12">
+                <label>Martial Status (Optional)</label>
+                <span class="circle"><i class="far fa-check-circle"></i></span>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+              <label class="col-md-3 col-sm-4 col-xs-6" style="width:25%"><input type="radio" name="status" [(ngModel)]="status" value="married"> Married</label>
+              <label class="col-md-3 col-sm-4 col-xs-6" style="width:25%"> <input type="radio" name="status" [(ngModel)]="status" value="unmarried"> Unmarried</label>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-lg-3 col-sm-12">
+                  <label>Country</label>
+                  <label class="red-text">*</label>
+              </div>
+              <div class="col-lg-3 col-sm-12">
+                  <select class="form-control" id="cselect" name ="cselect" [(ngModel)]="cselect" >
+                      <option value="Australia">Australia</option>
+                      <option value="Bangladesh">Bangladesh</option>
+                      <option value="Beligum">Beligum</option>
+                      <option value="Canada">Canada</option>
+                      <option value="China">China</option>
+                      <option value="India">India</option>
+                      <option value="Kenya">Kenya</option>
+                  </select>
+                  <span id="csid" class="text-danger"></span>
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                  <label>Email</label>
+                  <label class="red-text">*</label>
+              </div>
+              <div class="col-sm-12 col-lg-4">
+                  <input type="email" id="email" class="form-control" name="email"  [(ngModel)]="email" placeholder="Email">
+                  <span id="eid" class="text-danger"></span>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-lg-2 col-sm-12">
+                  <label>ISD-Moblie</label>
+                  <label class="red-text">*</label>
+              </div>
+              <div class="col-lg-1 col-sm-12">
+                  <input type="text" id="diff" class="form-control" placeholder="91">
+              </div> 
+              <div class="col-lg-3 col-sm-12">
+                  <input type="number" min="1" max="10" id="number"  class="form-control" name="mobile" [(ngModel)]="mobile"  placeholder="Mobile">
+                  <span id="nid" class="text-danger"></span>
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                  <label>Nationality</label>
+                  <label class="red-text">*</label>
+              </div>
+              <div class="col-sm-12 col-lg-4">
+                  <select class="form-control" id="nselect" name="nselect" [(ngModel)]="nselect">
+                      <option value="none">Select your Nationality</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Bangladesh">Bangladesh</option>
+                      <option value="Beligum">Beligum</option>
+                      <option value="Canada">Canada</option>
+                      <option value="China">China</option>
+                      <option value="India">India</option>
+                      <option value="Kenya">Kenya</option>
+              </select>
+              <span id="nsid" class="text-danger"></span>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-lg-12 col-sm-12 resi">
+                  Residential Address
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-3 col-sm-12">
+                  <label>Flat/Door/Block No.</label>
+              </div>
+              <div class="col-lg-3 col-sm-12">
+                  <textarea rows = "2" id="flatno" cols = "20"  name="flatno" [(ngModel)]="flatno" placeholder=" Flat/Door/Block No."></textarea>
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                  <label>Street/Lane (Optional)</label>
+                  <span class="circle"><i class="far fa-check-circle"></i></span>
+              </div>
+              <div class="col-lg-4 col-sm-12 ">
+                  <textarea  name="street" id="stln" [(ngModel)]="street" placeholder="  Street/Lane (Optional) "></textarea>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-lg-3 col-sm-12 ">
+                  <label>Area/Locality (Optional)</label>
+                  <span class="circle"><i class="far fa-check-circle"></i></span>
+              </div>
+              <div class="col-lg-3 col-sm-12">
+                  <textarea   name="area" [(ngModel)]="area" placeholder="  Area/Locality (Optional)" ></textarea>
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                  <label>Pincode</label>
+                  <span class="circle"><i class="far fa-check-circle"></i></span>
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                  <input type="number" min="1" max="10" id="pnum" name="pincode" [(ngModel)]="pincode" class="form-control" placeholder="Pin code">
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-lg-3 col-sm-12">
+                  <label>State</label>
+                  <label class="red-text">*</label>
+              </div>
+              <div class="col-lg-3 col-sm-12">
+                  <input type="text" id="state" class="form-control" name="state" [(ngModel)]="state" placeholder="State">
+                  <span id="stid" class="text-danger"></span>
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                  <label>City/Town</label>
+                  <label class="red-text">*</label>
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                  <input type="text" id="city" class="form-control" name="city" [(ngModel)]="city" placeholder="City/Town"> 
+                  <span id="ctid" class="text-danger"></span>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-lg-3 col-sm-12">
+                  <label>Post Office</label>
+                  <label class="red-text">*</label>
+              </div>
+              <div class="col-lg-3 col-sm-12">
+                  <input type="text" id="postoff" class="form-control" name=" postoff" [(ngModel)]="postoff" placeholder="Post Office"> 
+                  <span id="poid" class="text-danger"></span>
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                  <label>Phone</label>
+                  <label class="red-text">*</label>
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                  <input type="number" min="1" max="10" id="phonepe" class="form-control" name="Phone" [(ngModel)]="Phone" placeholder="Phone">
+                  <span id="ppeid" class="text-danger"></span>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-lg-3 col-sm-12">
+                  <label>Copy Residence to office Address</label>
+              </div>
+              <div class="col-lg-9 col-sm-12">
+                <label class="col-md-1 col-sm-1 col-xs-12 inlineBlock"><input type="radio" id="resia" name="Residence" value="Yes"> Yes</label>
+                <label class="col-md-1 col-sm-1 col-xs-12 inlineBlock"> <input type="radio"  id="resia" name="Residence" value="no"> No</label>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-lg-12 col-sm-12">
+                  <input type="checkbox" id="1" checked />
+                  Please inform me about IRCTC SBI Card through Phone/Email/SMS (Optional) <br>
+                  <p id="rail"> Book free Railway tickets using Reward Points and Enjoy Zero payment gateway charge with IRCTC SBI Card</p>
+              </div>
+          </div>  
+          <hr>
+          <div class="row">
+              <div class="col-lg-12 col-sm-12">
+                  <input type="checkbox" id="checkbox" name="cbox" />
+                  I have read and agree with the <span class="trm">Terms and Conditions.</span> and also agree to receive promotional emails/SMS/offers/announcements from IRCTC & associated partners
+              </div>
+          </div> 
+          <hr>
+          <div class="row">
+              <div class="col-sm-6 col-lg-6 buttons">
+                  <button class="btn btn-primary pull-right" id="butwo" (click)="login()" type="button">login</button>
+              </div>
+              <div class="col-sm-6 col-lg-6">
+                  <button class="btn btn-primary" id="buone" type="submit" >REGISTER</button>
+              </div>
+              
+          </div> 
+      </form>
+    </div>
+  </div>
+
+<div class="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <ul>
+                  <li><button id="clfoot">General Information <i class="down"></i></button>
+                       <ul id="clfo">
+                           <li>more info</li>
+                           <li>terms&condition</li>
+                           <li>statics</li>
+                           <li>current booking</li>
+                       </ul>
+                       
+                   </li>
+                   <li><button id="clfoot1">Important Information <i class="down"></i></button>
+                        <ul id="clfo1" >
+                            <li>travel insurance</li>
+                            <li>browser settings</li> 
+                         </ul>
+                   </li>
+                   <li ><button id="clfoot2">Agents <i class="down"></i></button>
+                         <ul id="clfo2">
+                            <li>norms for RTSA</li>
+                            <li>norms for IATA</li> 
+                             <li>blacklist agent</li>
+                             <li>find nge</li>
+         
+                          </ul>
+                  </li>
+                  <li><button id="clfoot22">Enquiries <i class="down"></i></button>
+                         <ul id="clfo22">
+                             <li>pnr enquiry </li>
+                             <li>train enquiry </li>  
+                         </ul>
+                  </li>
+              </ul>  
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <ul>
+                  <li><button id="clfoot3">How To <i class="down"></i></button>
+                       <ul id="clfo3">
+                           <li>more info</li>
+                           <li>terms&condition</li>
+                           <li>statics</li>
+                           <li>current booking</li>
+         
+                        </ul>
+                   </li>
+                   <li><button id="clfoot4">IRCTC Official App <i class="down"></i></button>
+                        <ul id="clfo4">
+                            <li>travel insurance</li>
+                            <li>browser settings</li> 
+                         </ul>
+                   </li>
+                   <li ><button id="clfoot5">Advertise with us <i class="down"></i></button>
+                         <ul id="clfo5">
+                            <li>norms for RTSA</li>
+                            <li>norms for IATA</li> 
+                             <li>blacklist agent</li>
+                             <li>find nge</li>
+         
+                          </ul>
+                    </li>
+                    <li><button id="clfoot6">Refund Rules <i class="down"></i></button>
+                         <ul id="clfo6">
+                             <li>pnr enquiry </li>
+                             <li>train enquiry </li>  
+                         </ul>
+                     </li>
+                 </ul>  
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <ul>
+                  <li><button id="clfoot7">IRCTC eWallet <i class="down"></i></button>
+                       <ul id="clfo7" >
+                           <li>more info</li>
+                           <li>terms&condition</li>
+                           <li>statics</li>
+                           <li>current booking</li>
+                       </ul>
+                   </li>
+                   <li><button id="clfoot8">IRCTC Loyalty Program <i class="down"></i></button>
+                        <ul id="clfo8" >
+                            <li>travel insurance</li>
+                            <li>browser settings</li> 
+                         </ul>
+                   </li>
+                   <li ><button id="clfoot9">About us <i class="down"></i></button>
+                       <ul id="clfo9">
+                            <li>norms for RTSA</li>
+                            <li>norms for IATA</li> 
+                             <li>blacklist agent</li>
+                             <li>find nge</li>
+                       </ul>
+                    </li>
+                    <li><button id="clfoot91">IRCTC Zone <i class="down"></i></button>
+                         <ul id="clfo91">
+                             <li>pnr enquiry </li>
+                             <li>train enquiry </li>  
+                         </ul>
+                     </li>
+                 </ul>  
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <ul>
+                  <li><button id="clfoot10">For Newly Migrated Agents <i class="down"></i></button>
+                       <ul id="clfo10" >
+                           <li>more info</li>
+                           <li>terms&condition</li>
+                           <li>statics</li>
+                           <li>current booking</li>
+         
+                        </ul>
+                   </li>
+                   <li><button id="clfoot11">Mobile <i class="down"></i></button>
+                        <ul id="clfo11">
+                            <li>travel insurance</li>
+                            <li>browser settings</li> 
+                         </ul>
+                   </li>
+                   <li ><button id="clfoot12">IRCTC Prepaid <i class="down"></i></button>
+                       <ul id="clfo12">
+                            <li>norms for RTSA</li>
+                            <li>norms for IATA</li> 
+                             <li>blacklist agent</li>
+                             <li>find nge</li>
+                       </ul>
+                    </li>
+                    <li><button id="clfoot13">Integration Policy <i class="down"></i></button>
+                         <ul id="clfo13">
+                             <li>pnr enquiry </li>
+                             <li>train enquiry </li>  
+                         </ul>
+                     </li>
+                 </ul>  
+          </div>
+          <div class="text-center col-lg-12 col-sm-12">
+              <p class="fab fa-facebook-square"></p>
+                  <p class="fab fa-twitter-square"></p>
+          </div>
+      </div>
+  </div>
+  
+</div>
+<div class="final">
+  <div class="container">
+      <div class="row">
+              <div class="col-lg-8 col-sm-12">
+                      <img src="assets/images/security.png">
+              </div>
+              <div class="col-lg-4 col-sm-12 fina">
+                        Copyright © 2019 - www.irctc.co.in. All Rights Reserved<br>
+                       <p>Designed and Hosted by<a href="#">CRIS</a><br>
+                       <a href="#">Compatible Browsers</a></p>
+              </div>
+      </div>
+  </div>
+</div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
